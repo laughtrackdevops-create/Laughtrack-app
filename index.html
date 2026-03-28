@@ -1,1 +1,33 @@
-<!DOCTYPE html><html><head><meta charset=UTF-8><meta name=viewport content='width=device-width,initial-scale=1'><title>LaughTrack</title><style>body{background:#050507;color:#f0ece4;font-family:sans-serif;margin:0}#r{max-width:480px;margin:0 auto;padding:20px}</style><script src='https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js'></script></head><body><div id=r></div><script>var e=React.createElement;var SU='https://solnanbqnbkyizwrqdur.supabase.co';var SK='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNvbG5hbmJxbmJreWl6d3JxZHVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzExMDk0NTEsImV4cCI6MjA4NjY4NTQ1MX0.wfS4LKg_4uMKxUHbDG-1X-gkgd-x5Ky7f3zYH-alXbU';function App(){var s=React.useState(null),d=s[0],sd=s[1];var l=React.useState(true),ld=l[0],sl=l[1];React.useEffect(function(){fetch(SU+'/rest/v1/unified_shows?order=show_date.asc&limit=10',{headers:{apikey:SK,Authorization:'Bearer '+SK}}).then(function(r){return r.json()}).then(function(j){sd(j);sl(false)}).catch(function(x){sd([{title:'ERR:'+x.message}]);sl(false)});},[]);if(ld)return e('div',{style:{padding:40,textAlign:'center'}},'Loading 154 comedy shows...');if(!d||!d.length)return e('div',{style:{padding:40}},'No data');return e('div',null,e('h1',{style:{fontSize:22,fontFamily:'Georgia,serif',marginBottom:16}},'Laugh',e('span',{style:{color:'#ff6b5a'}},'Track')),e('p',{style:{color:'#9b97a0',marginBottom:20}},d.length+' shows from Supabase'),d.map(function(s,i){return e('div',{key:i,style:{background:'#12121a',border:'1px solid #ffffff14',borderRadius:12,padding:16,marginBottom:10}},e('div',{style:{fontWeight:600,marginBottom:4}},s.title||'Untitled'),e('div',{style:{color:'#9b97a0',fontSize:13}},(s.venue_name||'')+(s.venue_city?' | '+s.venue_city:'')+(s.show_date?' | '+s.show_date:'')),s.source_type?e('span',{style:{display:'inline-block',marginTop:6,background:'#026cdf20',color:'#026cdf',padding:'2px 8px',borderRadius:100,fontSize:10,fontWeight:600}},s.source_type):null,s.ticket_url?e('a',{href:s.ticket_url,target:'_blank',style:{display:'block',marginTop:8,color:'#ff6b5a',fontSize:13}},'Get Tickets'):null)}));}ReactDOM.createRoot(document.getElementById('r')).render(e(App));</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050507">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>LaughTrack</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--d:#050507;--c:#12121a;--s:#1e1e2a;--i:#16161f;--t1:#f0ece4;--t2:#9b97a0;--t3:#5e5a66;--co:#ff6b5a;--cg:#ff6b5a40;--go:#f5c542;--gg:#f5c54230;--mi:#4ecdc4;--mg:#4ecdc430;--b:#ffffff0a;--bl:#ffffff14;--fd:'Playfair Display',serif;--fb:'DM Sans',sans-serif;--sb:env(safe-area-inset-bottom,0px)}
+body{font-family:var(--fb);background:var(--d);color:var(--t1);min-height:100dvh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+input{font-family:inherit}
+::-webkit-scrollbar{width:0;height:0}
+@keyframes fi{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.an{animation:fi .4s ease both}
+#root{max-width:480px;margin:0 auto;min-height:100dvh;position:relative}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var s=document.createElement("script");
+s.src="https://solnanbqnbkyizwrqdur.supabase.co/functions/v1/app-js";
+document.body.appendChild(s);
+</script>
+</body>
+</html>
